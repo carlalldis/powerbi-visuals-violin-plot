@@ -1508,5 +1508,6 @@
             "default": true,
             "canvas": true
         }
-    }
+    },
+    "privileges": []
 }

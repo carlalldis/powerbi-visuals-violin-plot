@@ -160,19 +160,18 @@ const getTooltipData = (
             ...getTooltipValue(tts.showIqr, stats.iqr, 'Inter Quartile Range', tts, locale, format),
             ...getTooltipValue(tts.showConfidence, stats.confidenceUpper, 'Upper Whisker (95%)', tts, locale, format),
             ...getTooltipValue(tts.showConfidence, stats.confidenceLower, 'Lower Whisker (5%)', tts, locale, format),
-            ...([
-                specifyBandwidth &&
-                    tts.showBandwidth &&
-                    formatTooltipBandwidthValue('Bandwidth (Specified)', stats.bandwidthActual, locale)
-            ] || []),
-            ...([
-                tts.showBandwidth &&
-                    formatTooltipBandwidthValue(
-                        `Bandwidth (Estimated${specifyBandwidth ? ', N/A' : ''})`,
-                        stats.bandwidthSilverman,
-                        locale
-                    )
-            ] || []),
+            ...(specifyBandwidth && tts.showBandwidth
+                ? [formatTooltipBandwidthValue('Bandwidth (Specified)', stats.bandwidthActual, locale)]
+                : []),
+            ...(tts.showBandwidth
+                ? [
+                      formatTooltipBandwidthValue(
+                          `Bandwidth (Estimated${specifyBandwidth ? ', N/A' : ''})`,
+                          stats.bandwidthSilverman,
+                          locale
+                      )
+                  ]
+                : []),
             ...getTooltipValue(
                 highlightedValue && true,
                 Number(highlightedValue?.key),
@@ -182,17 +181,17 @@ const getTooltipData = (
                 format,
                 cs.barColour
             ),
-            ...([
-                highlightedValue &&
-                    true &&
-                    formatTooltipSamplesValue(
-                        '# Samples with Highlighted Value',
-                        highlightedValue?.values?.count,
-                        tts,
-                        locale,
-                        cs.barColour
-                    )
-            ] || [])
+            ...(highlightedValue && true
+                ? [
+                      formatTooltipSamplesValue(
+                          '# Samples with Highlighted Value',
+                          highlightedValue?.values?.count,
+                          tts,
+                          locale,
+                          cs.barColour
+                      )
+                  ]
+                : [])
         ];
     debug.log('Tooltip Data', tooltips);
     return tooltips;

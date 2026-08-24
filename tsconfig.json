@@ -3,13 +3,13 @@
         "allowJs": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "module": "es6",
-        "target": "ES6",
+        "module": "NodeNext",
+        "target": "es2025",
         "sourceMap": true,
-        "outDir": "./.tmp/build/",
-        "moduleResolution": "node",
+        "moduleResolution": "NodeNext",
         "declaration": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "strict": false
     },
     "files": ["./src/visual.ts"]
 }

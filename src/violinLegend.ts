@@ -368,7 +368,8 @@ const getLegendDataPoint = (
             color,
             markerShape: MarkerShape.circle,
             selected: false,
-            identity
+            // Cast identity to any to satisfy LegendDataPoint.identity type differences
+            identity: identity as any
         }
     ]) ||
     [];

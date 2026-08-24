@@ -1,5 +1,6 @@
 import 'core-js/stable';
 import 'regenerator-runtime';
+// @ts-ignore: side-effect import of LESS/CSS file without type declarations
 import './../style/visual.less';
 import powerbi from 'powerbi-visuals-api';
 import IVisualHost = powerbi.extensibility.visual.IVisualHost;
@@ -75,7 +76,7 @@ export class Visual implements IVisual {
         this.i18n = this.host.createLocalizationManager();
         this.locale = this.host.locale;
         // Legend container
-        this.legend = createLegend(options.element, false, null, false, LegendPosition.Top);
+        this.legend = createLegend(options.element, false, LegendPosition.Top);
         // Visual container
         this.container = d3
             .select(options.element)
