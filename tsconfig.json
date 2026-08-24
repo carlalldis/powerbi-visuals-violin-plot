@@ -7,7 +7,7 @@
         "target": "es2025",
         "sourceMap": true,
         "moduleResolution": "NodeNext",
-        "declaration": true,
+        "declaration": false,
         "resolveJsonModule": true,
         "strict": false
     },
