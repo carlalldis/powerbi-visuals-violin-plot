@@ -202,7 +202,7 @@ export class ViewModelHandler {
         };
     }
 
-    private setDataViewMetadata(): import('c:/Repos/powerbi-visuals-violin-plot/src/models').IDataViewMetadata {
+    private setDataViewMetadata(): import('./models').IDataViewMetadata {
         return {
             categoryDisplayName: (this.categoryMetadata && this.categoryMetadata.displayName) || null,
             measureDisplayName: (this.measureMetadata.displayName && this.measureMetadata.displayName) || null
@@ -1279,7 +1279,7 @@ export class ViewModelHandler {
 
     private getYAxisLabelDimensions(
         yAxis: IAxisLinear
-    ): import('c:/Repos/powerbi-visuals-violin-plot/src/models').IDimensions {
+    ): import('./models').IDimensions {
         return {
             width:
                 this.settings.yAxis.show && this.settings.yAxis.showLabels && !yAxis.collapsed
@@ -1300,7 +1300,7 @@ export class ViewModelHandler {
     private getYAxisTitleDimensions(
         yAxis: IAxisLinear,
         yHeight: number
-    ): import('c:/Repos/powerbi-visuals-violin-plot/src/models').IDimensions {
+    ): import('./models').IDimensions {
         return {
             width:
                 this.settings.yAxis.show &&
@@ -1319,7 +1319,7 @@ export class ViewModelHandler {
 
     private getXAxisDimensions(
         xAxis: IAxisCategorical
-    ): import('c:/Repos/powerbi-visuals-violin-plot/src/models').IDimensions {
+    ): import('./models').IDimensions {
         return {
             height:
                 xAxis.titleDimensions.height +
@@ -1335,7 +1335,7 @@ export class ViewModelHandler {
 
     private getXAxisLabelDimensions(
         xAxis: IAxisCategorical
-    ): import('c:/Repos/powerbi-visuals-violin-plot/src/models').IDimensions {
+    ): import('./models').IDimensions {
         return {
             height:
                 this.settings.xAxis.show &&
@@ -1350,7 +1350,7 @@ export class ViewModelHandler {
 
     private getXAxisTitleDimensions(
         xAxis: IAxisCategorical
-    ): import('c:/Repos/powerbi-visuals-violin-plot/src/models').IDimensions {
+    ): import('./models').IDimensions {
         return {
             height:
                 this.settings.xAxis.show &&
