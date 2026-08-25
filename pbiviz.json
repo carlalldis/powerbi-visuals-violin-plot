@@ -1,10 +1,10 @@
 {
     "visual": {
-        "name": "violinPlot",
-        "displayName": "Violin Plot",
-        "guid": "violinPlot4D46EB9EB3A141D9BA2289793175D971",
+        "name": "violinPlot140",
+        "displayName": "Violin Plot (1.4.0)",
+        "guid": "violinPlot4AA91817D10E46F0999F050793BD180C",
         "visualClassName": "Visual",
-        "version": "1.4.0.28",
+        "version": "1.4.0.29",
         "description": "Use to visualise the distribution of your data.",
         "supportUrl": "https://coacervo.co/violin-plot",
         "gitHubUrl": "https://github.com/dm-p/powerbi-visuals-violin-plot"
